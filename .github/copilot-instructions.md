@@ -1,6 +1,6 @@
-# Runscript coding guidelines
+# Herescript
 
-Runscript is a modern, structured interpreter launcher designed to extend the limited Unix shebang mechanism.
+`herescript` is a modern, structured interpreter launcher designed to extend the limited Unix shebang mechanism. 
 
 ## Collaboration Guidelines
 
@@ -13,7 +13,6 @@ When providing technical assistance:
 - **Be direct about problems**: If something is wrong or will cause user confusion, say so clearly
 
 The goal is to build robust, well-designed software, not to avoid technical disagreements.
-
 
 ## Collaboration Guidelines
 
@@ -30,8 +29,6 @@ The goal is to build robust, well-designed software, not to avoid technical disa
   including the use of capitalization and periods.
   - EXCEPT for comments that are simply single words or short phrases
     such as `// TODO: ...` or `// Deprecated` or bullet-points.
-  - OR for comments that introduce a list. The introductory line will typically
-    not be a complete sentence and will finish with `:` or `:-`.
 - Where defensive checks are added, include a comment explaining why they are
   appropriate (not necessary, since defensive checks are not necessary).
 
@@ -52,6 +49,17 @@ For projects we own, including this one, we adopt the following single, uniform,
   Makefiles where tabs are effectively required.
 - Use 4 spaces per indentation level EXCEPT when working in YAML/JSON files where 2 spaces per indentation level is more practical owning to higher nesting levels.
 - UTF-8 encoding should be used for all text files EXCEPT when working with compilers/interpreters that do not support UTF-8.
+
+## C-specific Style Guidelines
+
+- We use 1TBS ("one true brace style") brace placement.
+- Braces are mandatory for the bodies of `if`, `else`, `for`, `while`, and `switch` statements,
+  with one exception: `if (condition) break;`, `if (condition) continue;`, and
+  `if (condition) return ...;` are written on a single line without braces.
+  These are treated as conditional exits rather than conditional branches.
+- The body of a control-flow statement is always on its own line; it is never placed on the
+  same line as the opening `{`.
+- Switch `case` labels have their body on the next line, not on the same line as the `case`.
 
 ## Developer documentation guidelines
 
